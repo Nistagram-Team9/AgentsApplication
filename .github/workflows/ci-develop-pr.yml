@@ -9,6 +9,8 @@ jobs:
   test:
     name: Unit Test
     runs-on: ubuntu-18.04
+    strategy:
+      matrix: { dir: ['agent-reports', 'product-service','shopping-service'] }
 
     steps:
       - uses: actions/checkout@v2
@@ -17,13 +19,13 @@ jobs:
         with:
           java-version: 1.8
       - name: Maven Package
-        working-directory: agent-user-service
+        working-directory: ${{ matrix.dir }}
         run: mvn -B clean package -DskipTests
       - name: Maven Verify
-        working-directory: agent-user-service
+        working-directory: ${{ matrix.dir }}
         run: mvn -B clean verify -Dspring.profiles.active=test
 
-  analyze_agent_user_service:
+  analyze_agent_reports:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -47,7 +49,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build and analyze
-        working-directory: agent-user-service
+        working-directory: agent-reports
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
