@@ -57,7 +57,7 @@ jobs:
 
 
   analyze_product_service:
-    needs: analyze_agent_user_service
+    needs: analyze_agent_reports
     runs-on: ubuntu-latest
     steps:
       - uses: jakejarvis/wait-action@master
