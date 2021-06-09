@@ -1,19 +1,21 @@
 version: "3.8"
 services:
 
-#  gateway:
-#    image: nginx:1.19.8-alpine
-#    #    build:
-#    #      context: ./services/Gateway
-#    #      dockerfile: Dockerfile
-#    ports:
-#      - 8080:8080
-#    networks:
-#      - servers
-#    volumes:
-#      - ./gateway/nginx.conf:/etc/nginx/nginx.conf
-#      - ./gateway/api_gateway.conf:/etc/nginx/api_gateway.conf
-#
+  gateway:
+    image: nginx:1.19.8-alpine
+    #    build:
+    #      context: ./services/Gateway
+    #      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    networks:
+      - servers
+    volumes:
+      - ./gateway/nginx.conf:/etc/nginx/nginx.conf
+      - ./gateway/api_gateway.conf:/etc/nginx/api_gateway.conf
+    depends_on:
+      - product-service
+
   product-service:
     build:
       context: ./product-service
@@ -36,49 +38,49 @@ services:
     depends_on:
       - database
 #
-  shopping-service:
-    build:
-      context: ./shopping-service
-      dockerfile: Dockerfile
-      args:
-        STAGE: ${STAGE:-dev}
-      target: ${TARGET_SHOPPING_SERVICE:-shoppingServiceRuntime}
-    image: marinavojnovic/shopping-service:${VERSION:-0.2.0}-${STAGE:-dev}
-    container_name: shopping-service
-    restart: on-failure
-    networks:
-      - servers
-    ports:
-      - 8082:8082
-    environment:
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      DATABASE_DOMAIN: ${DATABASE_DOMAIN}
-      DATABASE_SCHEMA: ${DATABASE_SCHEMA}
-    depends_on:
-      - database
+#  shopping-service:
+#    build:
+#      context: ./shopping-service
+#      dockerfile: Dockerfile
+#      args:
+#        STAGE: ${STAGE:-dev}
+#      target: ${TARGET_SHOPPING_SERVICE:-shoppingServiceRuntime}
+#    image: marinavojnovic/shopping-service:${VERSION:-0.2.0}-${STAGE:-dev}
+#    container_name: shopping-service
+#    restart: on-failure
+#    networks:
+#      - servers
+#    ports:
+#      - 8082:8082
+#    environment:
+#      DATABASE_USERNAME: ${DATABASE_USERNAME}
+#      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+#      DATABASE_DOMAIN: ${DATABASE_DOMAIN}
+#      DATABASE_SCHEMA: ${DATABASE_SCHEMA}
+#    depends_on:
+#      - database
 
-  agent-reports:
-      build:
-        context: ./agent-reports
-        dockerfile: Dockerfile
-        args:
-          STAGE: ${STAGE:-dev}
-        target: ${TARGET_AGENT_REPORTS:-agentReportsRuntime}
-      image: marinavojnovic/agent-reports:${VERSION:-0.2.0}-${STAGE:-dev}
-      container_name: agent-reports
-      restart: on-failure
-      networks:
-        - servers
-      ports:
-        - 8083:8080
-      environment:
-        DATABASE_USERNAME: ${DATABASE_USERNAME}
-        DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-        DATABASE_DOMAIN: ${DATABASE_DOMAIN}
-        DATABASE_SCHEMA: ${DATABASE_SCHEMA}
-      depends_on:
-        - database
+#  agent-reports:
+#      build:
+#        context: ./agent-reports
+#        dockerfile: Dockerfile
+#        args:
+#          STAGE: ${STAGE:-dev}
+#        target: ${TARGET_AGENT_REPORTS:-agentReportsRuntime}
+#      image: marinavojnovic/agent-reports:${VERSION:-0.2.0}-${STAGE:-dev}
+#      container_name: agent-reports
+#      restart: on-failure
+#      networks:
+#        - servers
+#      ports:
+#        - 8083:8080
+#      environment:
+#        DATABASE_USERNAME: ${DATABASE_USERNAME}
+#        DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+#        DATABASE_DOMAIN: ${DATABASE_DOMAIN}
+#        DATABASE_SCHEMA: ${DATABASE_SCHEMA}
+#      depends_on:
+#        - database
 
   database:
     image: mysql:${MYSQL_VERSION:-8.0.19}
