@@ -21,7 +21,7 @@ public class ProductService {
 	}
 	
 	public Product create(String name, Double price, Integer total, MultipartFile file) throws ImageStorageException {
-		Product newProduct = productRepository.save(new Product(name, price, total));
+		Product newProduct = productRepository.save(new Product(null, name, price, total, null));
 		String savedImagePath = imageStorageService.storeImage(file, newProduct.getId());
 		newProduct.setPicture(savedImagePath);
 		return newProduct;
