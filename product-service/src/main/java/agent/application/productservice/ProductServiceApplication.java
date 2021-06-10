@@ -30,6 +30,7 @@ public class ProductServiceApplication {
 
 	}
 
+
 	@GetMapping("/verify")
 	public ResponseEntity<Dto> get() throws UnknownHostException {
 		System.out.println("Verification");

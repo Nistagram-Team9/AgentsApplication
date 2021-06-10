@@ -2,13 +2,8 @@ package agent.application.productservice.service;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
-
 import agent.application.productservice.dto.ProductDto;
 import agent.application.productservice.exception.ImageStorageException;
 import agent.application.productservice.model.Product;
