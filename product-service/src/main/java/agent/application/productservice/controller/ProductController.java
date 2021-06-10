@@ -38,7 +38,7 @@ public class ProductController {
 		} catch (ImageStorageException e) {
 			return new ResponseEntity<>("Error while creating the product.", HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<>("Product successfully created.", HttpStatus.CREATED);
+		return new ResponseEntity<>("New product successfully created.", HttpStatus.CREATED);
 	}
 	
 	
