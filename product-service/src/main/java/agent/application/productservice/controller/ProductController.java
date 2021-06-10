@@ -32,7 +32,7 @@ public class ProductController {
 	@PostMapping
 	public ResponseEntity<String> create(@RequestParam @Valid String name, @RequestParam @Valid Double price, @RequestParam @Valid Integer total, 
 			@RequestParam MultipartFile file) {
-		Product product = new Product();
+		Product product = null;
 		try {
 			product = productService.create(name, price, total, file);
 		} catch (ImageStorageException e) {

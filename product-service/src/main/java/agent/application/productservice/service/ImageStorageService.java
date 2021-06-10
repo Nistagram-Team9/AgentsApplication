@@ -26,8 +26,12 @@ public class ImageStorageService {
 	}
 
 	 public String storeImage(MultipartFile file, Integer id) throws ImageStorageException {
-	        // Normalize file name
-	        String fileName = id + "_" + StringUtils.cleanPath(file.getOriginalFilename());
+		 	String fileName = null;
+		 	if (file.getOriginalFilename() != null) {
+		 		 fileName = id + "_" + StringUtils.cleanPath(file.getOriginalFilename());
+		 	} else {
+		 		throw new ImageStorageException("Invalid file name!");
+		 	}
 
 	        try {
 	            // Check if the file's name contains invalid characters
