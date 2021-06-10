@@ -1,10 +1,7 @@
 package agent.application.productservice.controller;
 
-import java.awt.PageAttributes.MediaType;
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,16 +30,15 @@ public class ProductController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Product> create(@RequestParam @Valid String name, @RequestParam @Valid Double price, @RequestParam @Valid Integer total, 
+	public ResponseEntity<String> create(@RequestParam @Valid String name, @RequestParam @Valid Double price, @RequestParam @Valid Integer total, 
 			@RequestParam MultipartFile file) {
-		System.out.println("Uslo");
-		Product product = null;
+		Product product = new Product();
 		try {
 			product = productService.create(name, price, total, file);
 		} catch (ImageStorageException e) {
-			return new ResponseEntity<>(null, HttpStatus.CREATED);
+			return new ResponseEntity<>("Error while creating the product.", HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<>(product, HttpStatus.CREATED);
+		return new ResponseEntity<>("Product successfully created.", HttpStatus.CREATED);
 	}
 	
 	
@@ -52,7 +48,7 @@ public class ProductController {
 		if (product != null) {
 			return new ResponseEntity<>(product, HttpStatus.OK);
 		} else {
-			return ResponseEntity.badRequest().body(null);
+			return ResponseEntity.badRequest().body(new Product());
 		}
 	}
 	
@@ -63,22 +59,22 @@ public class ProductController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<Product> update(@PathVariable Integer id, @RequestBody @Valid ProductDto productDto) {
+	public ResponseEntity<String> update(@PathVariable Integer id, @RequestBody @Valid ProductDto productDto) {
 		Product product = productService.update(id, productDto);
 		if (product != null) {
-			return new ResponseEntity<>(product, HttpStatus.OK);
+			return new ResponseEntity<>("Product succesfully updated.", HttpStatus.OK);
 		} else {
-			return ResponseEntity.badRequest().body(product);
+			return ResponseEntity.badRequest().body("Error while updating product.");
 		}
 	}
 	
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Product> delete(@PathVariable Integer id) {
+	public ResponseEntity<String> delete(@PathVariable Integer id) {
 		Product product = productService.delete(id);
 		if (product != null) {
-			return new ResponseEntity<>(product, HttpStatus.OK);
+			return new ResponseEntity<>("Product successfully deleted.", HttpStatus.OK);
 		} else {
-			return ResponseEntity.badRequest().body(null);
+			return ResponseEntity.badRequest().body("Error while deleting product.");
 		}
 
 
