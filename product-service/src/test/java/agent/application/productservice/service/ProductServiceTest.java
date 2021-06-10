@@ -94,7 +94,7 @@ public class ProductServiceTest {
 		Optional<Product> newProduct = Optional.of(new Product(1, "aa", 2000.0, 20, null));
 		Mockito.when(productRepositoryMock.findById(1)).thenReturn(newProduct);
 		Product returnedProduct = productService.update(1, new ProductDto("novo ime", 2000.0, 20, "putanja"));
-		assertEquals("novo ime", eturnedProduct.getName());
+		assertEquals("novo ime", returnedProduct.getName());
 
 	}
 	
