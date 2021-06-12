@@ -33,6 +33,6 @@ public class ShoppingOrder {
 	private Double total;
 
 	@ManyToMany
-	private List<Product> product = new ArrayList<Product>();
+	private List<Product> product = new ArrayList<>();
 
 }

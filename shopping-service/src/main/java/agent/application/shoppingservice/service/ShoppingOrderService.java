@@ -24,7 +24,7 @@ public class ShoppingOrderService {
 	}
 
 	public ShoppingOrder create(ShoppingOrderDto orderDto) throws ProductNotAvailable {
-		List<Product> products = new ArrayList<Product>();
+		List<Product> products = new ArrayList<>();
 		Double total = 0.0;
 		for (Integer id : orderDto.getProductIds()) {
 			Product product = productRepository.getOne(id);

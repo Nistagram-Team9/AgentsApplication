@@ -20,6 +20,6 @@ public class ShoppingOrderDto {
 
 	private String address;
 
-	private List<Integer> productIds = new ArrayList<Integer>();
+	private List<Integer> productIds = new ArrayList<>();
 
 }
