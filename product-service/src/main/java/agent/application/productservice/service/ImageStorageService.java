@@ -10,43 +10,43 @@ import org.springframework.util.StringUtils;
 
 @Service
 public class ImageStorageService {
-	
-	 private final Path fileStorageLocation;
-	 
+
+	private final Path fileStorageLocation;
+
 	@Autowired
 	public ImageStorageService(ImageStorageProperties fileStorageProperties) throws ImageStorageException {
-	    this.fileStorageLocation = Paths.get(fileStorageProperties.getUploadDir())
-	            .toAbsolutePath().normalize();
-	
-	    try {
-	        Files.createDirectories(this.fileStorageLocation);
-	    } catch (Exception ex) {
-	        throw new ImageStorageException("Could not create the directory where the uploaded files will be stored.", ex);
-	    }
+		this.fileStorageLocation = Paths.get(fileStorageProperties.getUploadDir()).toAbsolutePath().normalize();
+
+		try {
+			Files.createDirectories(this.fileStorageLocation);
+		} catch (Exception ex) {
+			throw new ImageStorageException("Could not create the directory where the uploaded files will be stored.",
+					ex);
+		}
 	}
 
-	 public String storeImage(MultipartFile file, Integer id) throws ImageStorageException {
-		 	String fileName = null;
-		 	if (file.getOriginalFilename() != null) {
-		 		 fileName = id + "_" + StringUtils.cleanPath(file.getOriginalFilename());
-		 	} else {
-		 		throw new ImageStorageException("Invalid file name!");
-		 	}
+	public String storeImage(MultipartFile file, Integer id) throws ImageStorageException {
+		String fileName = null;
+		if (file.getOriginalFilename() != null) {
+			fileName = id + "_" + StringUtils.cleanPath(file.getOriginalFilename());
+		} else {
+			throw new ImageStorageException("Invalid file name!");
+		}
 
-	        try {
-	            // Check if the file's name contains invalid characters
-	            if(fileName.contains("..")) {
-	                throw new ImageStorageException("Sorry! Filename contains invalid path sequence " + fileName);
-	            }
+		try {
+			// Check if the file's name contains invalid characters
+			if (fileName.contains("..")) {
+				throw new ImageStorageException("Sorry! Filename contains invalid path sequence " + fileName);
+			}
 
-	            // Copy file to the target location (Replacing existing file with the same name)
-	            Path targetLocation = this.fileStorageLocation.resolve(fileName);
-	            Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+			// Copy file to the target location (Replacing existing file with the same name)
+			Path targetLocation = this.fileStorageLocation.resolve(fileName);
+			Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
-	            return fileName;
-	        } catch (IOException ex) {
-	            throw new ImageStorageException("Could not store file " + fileName + ". Please try again!", ex);
-	        }
-	    }
+			return fileName;
+		} catch (IOException ex) {
+			throw new ImageStorageException("Could not store file " + fileName + ". Please try again!", ex);
+		}
+	}
 
 }

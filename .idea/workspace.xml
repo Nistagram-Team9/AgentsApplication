@@ -2,17 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35acae73-dbff-467d-a951-20384438f82d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/exception/ImageStorageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/exception/ImageStorageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/service/ImageStorageProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/service/ImageStorageProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/service/ImageStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/service/ImageStorageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1tlPN7XN9gRsTPs1NzBPq5EfgQ2" />
   <component name="ProjectViewState">
@@ -52,6 +66,9 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="35acae73-dbff-467d-a951-20384438f82d" name="Default Changelist" comment="" />
