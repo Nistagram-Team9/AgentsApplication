@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AgentsApplication.iml" filepath="$PROJECT_DIR$/.idea/AgentsApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../THE AGENT APPLICATION /!/AgentsApplication/.idea/AgentsApplication.iml" filepath="$PROJECT_DIR$/../../THE AGENT APPLICATION /!/AgentsApplication/.idea/AgentsApplication.iml" />
     </modules>
   </component>
