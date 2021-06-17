@@ -90,10 +90,11 @@ public class ProductServiceTest {
 	}
 
 	@Test
-	public void update_successful() {
+	public void update_successful() throws ImageStorageException {
 		Optional<Product> newProduct = Optional.of(new Product(1, "aa", 2000.0, 20, null));
 		Mockito.when(productRepositoryMock.findById(1)).thenReturn(newProduct);
-		Product returnedProduct = productService.update(1, new ProductDto("novo ime", 2000.0, 20, "putanja"));
+		Mockito.when(imageStorageServiceMock.storeImage(null,1)).thenReturn("putanja");
+		Product returnedProduct = productService.update(1, "novo ime", 2000.0, 20, null);
 		assertEquals("novo ime", returnedProduct.getName());
 
 	}
