@@ -22,4 +22,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/dashboard/all-products'])
   }
 
+  getMostPurchased(){
+    this.router.navigate(['/dashboard/reports/earned']);
+  }
+
+  getMostEarned(){
+    this.router.navigate(['/dashboard/reports/sold']);
+  }
+
 }
