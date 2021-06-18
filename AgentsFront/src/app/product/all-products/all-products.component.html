@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table table-striped">
+            <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Picture</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products" >
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td >{{product.total}}</td>
+                    <td><img *ngIf="product.picture" [src]="product.picture"/></td> 
+                    <td><button (click)="update(product)">Update</button></td>    
+                    <td><button (click)="delete(product)">Delete</button></td>
+                </tr>
+            </tbody> 
+    </table>
+</div>

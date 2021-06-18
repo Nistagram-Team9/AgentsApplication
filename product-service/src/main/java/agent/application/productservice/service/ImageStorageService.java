@@ -1,20 +1,30 @@
 package agent.application.productservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import agent.application.productservice.exception.ImageStorageException;
+import agent.application.productservice.model.Product;
+import agent.application.productservice.repository.ProductRepository;
+
 import java.io.IOException;
 import java.nio.file.*;
 import org.springframework.util.StringUtils;
 
 @Service
 public class ImageStorageService {
+	
+	@Value("${file.upload-dir}")
+	private String fileUploadDir;
 
 	private final Path fileStorageLocation;
+	private final ProductRepository productRepostory;
 
 	@Autowired
-	public ImageStorageService(ImageStorageProperties fileStorageProperties) throws ImageStorageException {
+	public ImageStorageService(ImageStorageProperties fileStorageProperties, ProductRepository productRepository)
+			throws ImageStorageException {
+		this.productRepostory = productRepository;
 		this.fileStorageLocation = Paths.get(fileStorageProperties.getUploadDir()).toAbsolutePath().normalize();
 
 		try {
@@ -28,7 +38,11 @@ public class ImageStorageService {
 	public String storeImage(MultipartFile file, Integer id) throws ImageStorageException {
 		String fileName = null;
 		if (file.getOriginalFilename() != null) {
+			String fileName2 = fileUploadDir +"/"+ file.getOriginalFilename();
 			fileName = id + "_" + StringUtils.cleanPath(file.getOriginalFilename());
+			Product product = productRepostory.getOne(id);
+			product.setPicture(fileName2);
+			productRepostory.save(product);
 		} else {
 			throw new ImageStorageException("Invalid file name!");
 		}

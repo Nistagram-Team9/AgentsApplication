@@ -35,15 +35,15 @@ public class ProductService {
 		return productRepository.findAll();
 	}
 	
-	public Product update(Integer id, ProductDto productDto) {
+	public Product update(Integer id, String name, Double price, Integer total, MultipartFile file) throws ImageStorageException{
+		imageStorageService.storeImage(file, id);
 		Product product = this.findById(id);
 		if (product != null) {
-			product.setPicture(productDto.getPicture());
-			product.setName(productDto.getName());
-			product.setPrice(productDto.getPrice());
-			product.setTotal(productDto.getTotal());
-			
+			product.setName(name);
+			product.setPrice(price);
+			product.setTotal(total);
 		}
+		productRepository.save(product);
 		return product;
 	}
 	
