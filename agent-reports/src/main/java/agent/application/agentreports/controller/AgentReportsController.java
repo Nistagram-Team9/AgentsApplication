@@ -13,7 +13,7 @@ import agent.application.agentreports.model.Product;
 import agent.application.agentreports.service.AgentReportsService;
 
 @RestController
-@RequestMapping(value = "/agentReports")
+@RequestMapping(value = "/reports")
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class AgentReportsController {
 

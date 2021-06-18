@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { CreateProductComponent } from './product/create-product/create-product.component';
 import { AllProductsComponent } from './product/all-products/all-products.component';
 import { UpdateProductComponent } from './product/update-product/update-product.component';
+import { ReportComponent } from './report/report.component';
 
 
 const routes: Routes = [
@@ -13,13 +14,10 @@ const routes: Routes = [
     children: [
       { path: 'create-product', component: CreateProductComponent },
       { path: 'all-products', component: AllProductsComponent },
-      { path: 'update-product/:id', component: UpdateProductComponent }
+      { path: 'update-product/:id', component: UpdateProductComponent },
+      { path: 'reports/:option', component: ReportComponent}
     ]
   },
-  // {
-  //   path: 'create-product',
-  //   component: CreateProductComponent
-  // },
   { path: '**', redirectTo: 'dashboard' }
 ];
 

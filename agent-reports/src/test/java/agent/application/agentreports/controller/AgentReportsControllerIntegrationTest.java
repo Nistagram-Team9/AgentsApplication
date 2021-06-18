@@ -50,7 +50,7 @@ public class AgentReportsControllerIntegrationTest {
 	
 	@Test
 	public void test_getMostPurchased__successful() {
-		ResponseEntity<Product[]> responseEntity = testRestTemplate.getForEntity("/agentReports/mostSold",
+		ResponseEntity<Product[]> responseEntity = testRestTemplate.getForEntity("/reports/mostSold",
 				Product[].class);
 		assertEquals("New product 1", responseEntity.getBody()[0].getName());
 
@@ -58,7 +58,7 @@ public class AgentReportsControllerIntegrationTest {
 	
 	@Test
 	public void test_getMostEarned__successful() {
-		ResponseEntity<Product[]> responseEntity = testRestTemplate.getForEntity("/agentReports/mostEarned",
+		ResponseEntity<Product[]> responseEntity = testRestTemplate.getForEntity("/reports/mostEarned",
 				Product[].class);
 		assertEquals("New product 2", responseEntity.getBody()[0].getName());
 
