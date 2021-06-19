@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import agent.application.shoppingservice.dto.MessageDto;
 import agent.application.shoppingservice.dto.ShoppingOrderDto;
 import agent.application.shoppingservice.exception.ProductNotAvailable;
 import agent.application.shoppingservice.service.ShoppingOrderService;
@@ -26,9 +27,9 @@ public class ShoppingOrderController {
 	}
 
 	@PostMapping
-	public ResponseEntity<String> create(@RequestBody @Valid ShoppingOrderDto orderDto) throws ProductNotAvailable {
+	public ResponseEntity<MessageDto> create(@RequestBody @Valid ShoppingOrderDto orderDto) throws ProductNotAvailable {
 		orderService.create(orderDto);
-		return new ResponseEntity<>("New order successfully created.", HttpStatus.CREATED);
+		return new ResponseEntity<>(new MessageDto("Success", "New order is created successfully."), HttpStatus.CREATED);
 	}
 
 }

@@ -30,4 +30,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/dashboard/reports/sold']);
   }
 
+  createOrder(){
+    this.router.navigate(['/dashboard/shopping-order'])
+  }
+
 }

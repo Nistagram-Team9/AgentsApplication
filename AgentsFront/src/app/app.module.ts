@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateProductComponent } from './product/update-product/update-product.component';
 import { ReportComponent } from './report/report.component';
+import { CreateOrderComponent } from './orders/create-order/create-order.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReportComponent } from './report/report.component';
     CreateProductComponent,
     AllProductsComponent,
     UpdateProductComponent,
-    ReportComponent
+    ReportComponent,
+    CreateOrderComponent
   ],
   imports: [
     BrowserModule,

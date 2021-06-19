@@ -47,7 +47,7 @@ public class ShoppingOrderControllerIntegrationTest {
 		ShoppingOrderDto shoppingOrderDto = new ShoppingOrderDto("Jonh", "Doe", "Address1", productsIds);
 		ResponseEntity<String> responseEntity = testRestTemplate.postForEntity("/orders", shoppingOrderDto,
 				String.class);
-		assertEquals("New order successfully created.", responseEntity.getBody());
+		assertEquals("{\"header\":\"Success\",\"message\":\"New order is created successfully.\"}", responseEntity.getBody());
 
 	}
 
