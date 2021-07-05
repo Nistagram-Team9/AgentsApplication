@@ -1,0 +1,14 @@
+<form>
+    <label>Customer name:</label><br>
+    <input type="text" [(ngModel)]="shoppingOrder.customerName" [ngModelOptions]="{standalone: true}"><br>
+    <label>Customer last name:</label><br>
+    <input type="text" [(ngModel)]="shoppingOrder.customerLastName" [ngModelOptions]="{standalone: true}"><br><br>
+    <label>Address:</label><br>
+    <input type="text" [(ngModel)]="shoppingOrder.address" [ngModelOptions]="{standalone: true}"><br><br>
+    <label>Products:</label><br>
+    <select name="selectedProducts" [(ngModel)]="selectedProducts" multiple>
+        <option *ngFor="let product of products" [ngValue]="product">{{product.name}} {{product.price}}</option>
+    </select>
+    <button style="margin-left: 10px;" mat-raised-button color="accent" (click)="createOrder()">Create order</button>
+</form>
+
