@@ -23,7 +23,7 @@ import agent.application.productservice.model.Product;
 import agent.application.productservice.service.ProductService;
 
 @RestController
-@RequestMapping(value = "/products")
+@RequestMapping(value = "products")
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class ProductController {
 

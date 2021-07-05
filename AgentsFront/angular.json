@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AgentsFront"
+    }
+  },
+  "defaultProject": "AgentsFront",
+  "cli": {
+    "analytics": false
+  }
 }
