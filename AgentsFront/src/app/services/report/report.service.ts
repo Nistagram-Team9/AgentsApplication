@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ReportService {
 
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-  private path = `http://localhost:8080/reports`;
+  private path = `http://localhost:8083/reports`;
 
   constructor(private http: HttpClient) { }
 

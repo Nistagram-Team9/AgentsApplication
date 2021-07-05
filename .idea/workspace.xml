@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="35acae73-dbff-467d-a951-20384438f82d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgentsFront/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/AgentsFront/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgentsFront/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/AgentsFront/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent-reports/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/agent-reports/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/api_gateway.conf" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/api_gateway.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +41,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
