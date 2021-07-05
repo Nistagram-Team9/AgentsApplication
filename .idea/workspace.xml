@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35acae73-dbff-467d-a951-20384438f82d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/dto/ProductDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/exception/ImageStorageException.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/exception/ImageStorageException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/service/ImageStorageProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/service/ImageStorageProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/service/ImageStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/agent/application/productservice/service/ImageStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +20,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1tlPN7XN9gRsTPs1NzBPq5EfgQ2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,6 +35,17 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -77,6 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623340660389</updated>
       <workItem from="1623340662399" duration="386000" />
+      <workItem from="1624193225160" duration="1945000" />
     </task>
     <servers />
   </component>
