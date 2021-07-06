@@ -35,7 +35,7 @@ public class ProductController {
 
 	@PostMapping
 	public ResponseEntity<MessageDto> create(@RequestParam @Valid String name, @RequestParam @Valid Double price,
-			@RequestParam @Valid Integer total, @RequestParam MultipartFile file) {
+			@RequestParam @Valid Integer total, @RequestParam MultipartFile file) throws Exception {
 		Product product = null;
 		try {
 			product = productService.create(name, price, total, file);
@@ -65,7 +65,7 @@ public class ProductController {
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<MessageDto> update(@PathVariable Integer id, @RequestParam @Valid String name,
 			@RequestParam @Valid Double price, @RequestParam @Valid Integer total, @RequestParam MultipartFile file)
-			throws ImageStorageException {
+			throws Exception {
 		Product product = productService.update(id, name, price, total, file);
 		if (product != null) {
 			return new ResponseEntity<>(new MessageDto("Success", "Product succesfully updated."), HttpStatus.OK);

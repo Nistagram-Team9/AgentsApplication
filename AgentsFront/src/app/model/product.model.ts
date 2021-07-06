@@ -3,7 +3,7 @@ export class Product {
     name: string;
     price: number;
     total: number;
-    picture: File;
+    picture: string;
     constructor(){
     }
   }
