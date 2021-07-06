@@ -25,6 +25,13 @@ export class AllProductsComponent implements OnInit {
     )
   }
 
+  getLink(picture){
+    let el=picture.split("/");
+    let fixedLink=el[0]+"//"+el[2]+"/"+"uc?export=view&id="+el[5];
+    console.log(fixedLink);
+    return fixedLink;
+  }
+
   update(product) {
     console.log(product.id);
     this.router.navigate(['/dashboard/update-product/'+product.id]);

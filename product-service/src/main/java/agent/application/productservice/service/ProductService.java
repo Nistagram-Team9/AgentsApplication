@@ -1,5 +1,7 @@
 package agent.application.productservice.service;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -20,7 +22,7 @@ public class ProductService {
 		this.imageStorageService = imageStorageService;
 	}
 	
-	public Product create(String name, Double price, Integer total, MultipartFile file) throws ImageStorageException {
+	public Product create(String name, Double price, Integer total, MultipartFile file) throws Exception {
 		Product newProduct = productRepository.save(new Product(null, name, price, total, null));
 		String savedImagePath = imageStorageService.storeImage(file, newProduct.getId());
 		newProduct.setPicture(savedImagePath);
@@ -35,7 +37,7 @@ public class ProductService {
 		return productRepository.findAll();
 	}
 	
-	public Product update(Integer id, String name, Double price, Integer total, MultipartFile file) throws ImageStorageException{
+	public Product update(Integer id, String name, Double price, Integer total, MultipartFile file) throws Exception{
 		imageStorageService.storeImage(file, id);
 		Product product = this.findById(id);
 		if (product != null) {
