@@ -19,3 +19,4 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_USER }}/$REPO:latest -t $REPO:${GITHUB_SHA::8} .
       - name: Publish Docker image
         run: docker push ${{ secrets.DOCKER_USER }}/$REPO:latest
+        
