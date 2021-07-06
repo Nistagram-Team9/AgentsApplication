@@ -3,6 +3,8 @@ package agent.application.productservice.service;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -41,7 +43,7 @@ public class ProductServiceTest {
 	private ImageStorageService imageStorageServiceMock;
 	
 	@Test
-	public void create_successful() throws ImageStorageException {
+	public void create_successful() throws Exception {
 		Product newProduct = new Product(1, "aa", 2000.0, 20, null);
 		Mockito.when(productRepositoryMock.save(Mockito.any())).thenReturn(newProduct);
 		Mockito.when(imageStorageServiceMock.storeImage(null,1)).thenReturn("putanja");
@@ -51,7 +53,7 @@ public class ProductServiceTest {
 	}
 	
 	@Test(expected=ImageStorageException.class)
-	public void create_unsuccessful() throws ImageStorageException {
+	public void create_unsuccessful() throws Exception {
 		Product newProduct = new Product(1, "aa", 2000.0, 20, null);
 		Mockito.when(productRepositoryMock.save(Mockito.any())).thenReturn(newProduct);
 		Mockito.when(imageStorageServiceMock.storeImage(null,1)).thenThrow(ImageStorageException.class);
@@ -90,7 +92,7 @@ public class ProductServiceTest {
 	}
 
 	@Test
-	public void update_successful() throws ImageStorageException {
+	public void update_successful() throws Exception {
 		Optional<Product> newProduct = Optional.of(new Product(1, "aa", 2000.0, 20, null));
 		Mockito.when(productRepositoryMock.findById(1)).thenReturn(newProduct);
 		Mockito.when(imageStorageServiceMock.storeImage(null,1)).thenReturn("putanja");
